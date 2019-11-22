@@ -2,9 +2,9 @@ from qbittorrent import Client
 
 class AutoTorrentDownloader(object): 
     def __init__(self):
-        self.torrent_db_location = "C:/Users/Noam/Dropbox/Dropbox/torrent_db.txt"
-        self.added_torrents_db_location = "added_torrent_db.txt"
-        self.client = Client('http://127.0.0.1:8080/')
+        self.torrent_db_location = "torrents_db_location/torrent_db.txt"
+        self.added_torrents_db_location = "added_torrents_db_location/added_torrent_db.txt"
+        self.client = Client('http://host.docker.internal:8080/')
 
     
     def add_torrent(self, link: str) -> None:
