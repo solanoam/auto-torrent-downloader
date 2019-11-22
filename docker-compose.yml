@@ -1,0 +1,20 @@
+version: "3.6"
+services:
+  auto-torrent:
+    environment: 
+      - COMPOSE_CONVERT_WINDOWS_PATHS=1
+    networks: 
+      - dockernet
+    build:
+      context: .
+    volumes: 
+      - type: bind
+        source: c:/Users/Noam/Dropbox/Dropbox
+        target: /home/torrents_db_location
+      - type: bind
+        source: c:/Users/Noam/AppData/Local/AutoTorrentDownloader
+        target: /home/added_torrents_db_location
+    privileged: true
+networks: 
+  dockernet:
+    external: true
